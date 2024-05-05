@@ -23,6 +23,17 @@ const jsxHeading = (
 
 // React Component
 
+const Heading = () => {
+  return <h1>Namaste React from JSX 🚀</h1>;
+};
+
+const HeadingComponent = () => (
+  <div>
+    <Heading /> // component composition 
+    <h1>Welcome to Namaste React 🚀</h1>
+  </div>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(jsxHeading);
+root.render(<HeadingComponent />);
