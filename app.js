@@ -1,24 +1,28 @@
-// create a element in react using React.createElement
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// const heading = React.createElement("h1",
-// {id : "heading"},
-// "Hello World from React");
+// React.createElement => is an object => render as a HTMLelement
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag"),
-  ]),
-]);
+const heading = React.createElement(
+  "h1",
+  { id: "heading" },
+  "Namaste React 🚀"
+);
 
-// create a root inside a react
+// JSX (transpiled before it reaches the JS) done by => PARCEL but not exactly by parcel but with the => BABEL
+
+// JSX => React.createElement => object => HTMLElement (render)
+
+// React Element
+
+const jsxHeading = (
+  <h1 className="heading" tabIndex={5}>
+    Namaste React from JSX 🚀
+  </h1>
+);
+
+// React Component
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// render the heading in web browser in react using root.render
-
-root.render(parent);
+root.render(jsxHeading);
